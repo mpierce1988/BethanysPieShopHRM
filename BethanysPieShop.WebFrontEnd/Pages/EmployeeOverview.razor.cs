@@ -8,10 +8,17 @@ namespace BethanysPieShop.WebFrontEnd.Pages
     {
         public List<Employee>? Employees { get; set; } = default!;
 
+        private Employee? _selectedEmployee;
+
         protected override void OnInitialized()
         {
             Employees = MockDataService.Employees;
             base.OnInitialized();
+        }
+
+        public void ShowQuickViewPopup(Employee selectedEmployee)
+        {
+            _selectedEmployee = selectedEmployee;
         }
     }
 }
